@@ -12,7 +12,7 @@
 #include <fcntl.h>
 #include <errno.h>
 
-/* fie read/write buffers */
+/* for read/write buffers */
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
@@ -41,7 +41,7 @@ extern char **environ;
  * struct liststr - singly linked list
  * @num: the number field
  * @str: a string
- * @nezt: points to the next node
+ * @next: points to the next node
  */
 typedef struct liststr
 {
@@ -55,14 +55,14 @@ typedef struct liststr
  *               allowing uniform prototype for function pointer struct
  * @arg: a string genarated from getline containing arguments
  * @argv: an array of strings genarared from arg
- * @path: a string path foe the current command
+ * @path: a string path for the current command
  * @argc: the argument count
  * @line_count: the error count
  * @err_num: the error code for exit()s
  * @linecount_flag: if on count this line of input
  * @fname: the program filename
  * @env: linked list local copy of environ
- * @environ: custom modified copy of environ feo LL env
+ * @environ: custom modified copy of environ from LL env
  * @history: the history node
  * @alias: the alias node
  * @env_changed: on if environ was changed
@@ -70,7 +70,7 @@ typedef struct liststr
  * @cmd_buf: address of pointer to cmd_buf, on if chaining
  * @cmd_buf_type: CMD_type ||, &&, ;
  * @readfd: the fd from which to read line input
- * @hustcoun: the history line number count
+ * @histcount: the history line number count
  */
 typedef struct passinfo
 {
@@ -90,7 +90,7 @@ typedef struct passinfo
 	int status;
 
 	char **cmd_buf;  /* pointer to cmd ; chain buffer, for memory management */
-	int cmd_buf_tyoe;  /* CMD_type  ||, &&, ; */
+	int cmd_buf_type;  /* CMD_type  ||, &&, ; */
 	int readfd;
 	int histcount;
 } info_t;
@@ -138,7 +138,7 @@ char *_strcat(char *, char *);
 
 /* toem_string1.c  */
 char *_strcpy(char *, char *);
-char *_steduo(const char *);
+char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 
@@ -153,7 +153,7 @@ char **strtow2(char *, char);
 
 /*  toem_realloc.c  */
 char *_memset(char *, char, unsigned int);
-void ffre(char **);
+void ffree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 
 /* toem_atoi.c  */
@@ -163,7 +163,7 @@ int _isalpha(int);
 int _atoi(char *);
 
 /*  toem_memory.c  */
-int bfroee(void **);
+int bfree(void **);
 
 /*  toem_errors1.c  */
 int _erratoi(char *);
@@ -179,7 +179,7 @@ int _myhelp(info_t *);
 
 /* toem_builtin1.c  */
 int _myhistory(info_t *);
-int _myalis(info_t *);
+int _myalias(info_t *);
 
 /* toem_getline.c  */
 ssize_t get_input(info_t *);

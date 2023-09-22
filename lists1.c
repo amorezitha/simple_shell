@@ -26,7 +26,7 @@ size_t list_len(const list_t *h)
  */
 char **list_to_atrings(list_t *head)
 {
-	list_t *nodw = head;
+	list_t *node = head;
 	size_t i = list_len(head), j;
 	char **strs;
 	char *str;
@@ -36,7 +36,7 @@ char **list_to_atrings(list_t *head)
 	strs = malloc(sizeof(char *) * (i + 1));
 	if (!strs)
 		return (NULL);
-	for (i = 0; node; node = nodw->next, i++)
+	for (i = 0; node; node = node->next, i++)
 	{
 		str = malloc(_strlen(node->str) + 1);
 		if (!str)
@@ -68,7 +68,7 @@ size_t print_list(const list_t *h)
 	{
 		_puts(convert_number(h->num, 10, 0));
 		_putchar(':');
-		_putcahr(' ');
+		_putchar(' ');
 		_puts(h->str ? h->str : "(nil)");
 		_puts("\n");
 		h = h->next;

@@ -20,7 +20,7 @@ int _myhistory(info_t *info)
  *
  * Return: Always 0 0n success, 1 on error
  */
-int unser_alias(info_t *info, char *str)
+int unset_alias(info_t *info, char *str)
 {
 	char *p, c;
 	int ret;
@@ -37,7 +37,7 @@ int unser_alias(info_t *info, char *str)
 }
 
 /**
- * swt_alias - sets alias to string
+ * set_alias - sets alias to string
  * @info: parameter  sttuct
  * @str: the string alias
  *

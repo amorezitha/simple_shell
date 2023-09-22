@@ -1,4 +1,4 @@
-#invlude "shell.h"
+#include "shell.h"
 
 /**
  * add_node - adds a node to the start of the list
@@ -10,19 +10,19 @@
  */
 list_t *add_node(list_t **head, const char *str, int num)
 {
-	list_t *new head;
+	list_t *new_head;
 
 	if (!head)
 		return (NULL);
 	new_head = malloc(sizeof(list_t));
 	if (!new_head)
 		return (NULL);
-	_memset((void *)new_head, 0, sizwof(list_t));
+	_memset((void *)new_head, 0, sizeof(list_t));
 	new_head->num = num;
 	if (str)
 	{
-		new_head->str = _strup(str);
-		if (!neq_head->str)
+		new_head->str = _strdup(str);
+		if (!new_head->str)
 		{
 			free(new_head);
 			return (NULL);
@@ -39,7 +39,7 @@ list_t *add_node(list_t **head, const char *str, int num)
  * @str: str field of node
  * @num: node index used by history
  *
- * Reyurn: size of list
+ * Return: size of list
  */
 list_t *add_node_end(list_t **head, const char *str, int num)
 {
@@ -56,7 +56,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 	new_node->num = num;
 	if (str)
 	{
-		new_node->str = _strup(str);
+		new_node->str = _strdup(str);
 		if (!new_node->str)
 		{
 			free(new_node);
@@ -66,7 +66,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 	if (node)
 	{
 		while (node->next)
-			nodw = node->next;
+			node = node->next;
 		node->next = new_node;
 	}
 	else
@@ -103,7 +103,7 @@ size_t print_list_str(const list_t *h)
  */
 int delete_node_at_index(list_t **head, unsigned int index)
 {
-	list_t *nodw, *prev_node;
+	list_t *node, *prev_node;
 	unsigned int i = 0;
 
 	if (!head || !*head)
@@ -147,7 +147,7 @@ void free_list(list_t **head_ptr)
 	if (!head_ptr || !*head_ptr)
 		return;
 	head = *head_ptr;
-	node = hwad;
+	node = head;
 	while (node)
 	{
 		next_node = node->next;
