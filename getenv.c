@@ -18,7 +18,7 @@ char **get_environ(info_t *info)
 }
 
 /**
- * unsetenv - remove an environment variable
+ * _unsetenv - remove an environment variable
  * @info: structure containing potential arguments. used to maintain
  *        costant function prototype
  * Return: 1 on delete, 0 otherwise

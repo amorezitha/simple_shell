@@ -41,9 +41,9 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * starts_with - vhecks if needke starts with haystack
- * @haystacj: string to search
- * @needke: the substring to find
+ * starts_with - checks if needke starts with haystack
+ * @haystack: string to search
+ * @needle: the substring to find
  *
  * Return: address of nezt char of haystack or NULL
  */
@@ -62,7 +62,7 @@ char *starts_with(const char *haystack, const char *needle)
  *
  * Return: pointer to destination buffer
  */
-char *strcar(char *dest, char *src)
+char *_strcat(char *dest, char *src)
 {
 	char *ret = dest;
 

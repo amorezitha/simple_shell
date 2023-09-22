@@ -46,7 +46,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 
 /**
  * get_input - gets a line minus the newline
- * @infi: parameter struct
+ * @info: parameter struct
  *
  * Return: bytes read
  */
@@ -90,7 +90,7 @@ ssize_t get_input(info_t *info)
 }
 
 /**
- * read_buf _ reads a buffer
+ * read_buf - reads a buffer
  * @info: parameter struct
  * @buf: buffer
  * @i: size
@@ -113,7 +113,7 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
  * _getline - gets the next line of input from STDIN
  * @info: parameter struct
  * @ptr: address of pointer to buffer, pre-allocated or NULL
- * @lengtg: aize of pre-allocated ptr buffer if not NULL
+ * @length: aize of pre-allocated ptr buffer if not NULL
  *
  * Return: s
  */

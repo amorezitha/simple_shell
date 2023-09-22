@@ -28,7 +28,7 @@ char *_strcpy(char *dest, char *src)
  *
  * Return: pointer to the duplicated string
  */
-char *_strup(const char *str)
+char *_strdup(const char *str)
 {
 	int length = 0;
 	char *ret;
@@ -62,7 +62,7 @@ void _puts(char *str)
 		_putchar(str[i]);
 		i++;
 	}
-}	
+}
 
 /**
  * _putchar - writes the character c ti stdout

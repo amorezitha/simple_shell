@@ -23,8 +23,8 @@ void _eputs(char *str)
  * _eputchar - writes the character c to stderr
  * @c: the character to print
  *
- * Returb: on success 1.
- * on eeror, -1 is returned, and errno is set appropriately
+ * Return: on success 1.
+ * on error, -1 is returned, and errno is set appropriately
  */
 int _eputchar(char c)
 {
@@ -65,7 +65,7 @@ int _putfd(char c, int fd)
 }
 
 /**
- * _putsfs - prints an input string
+ * _putsfd - prints an input string
  * @str: the string to be printed
  * @fd: the fole descriptor to write to
  *

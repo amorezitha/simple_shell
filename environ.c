@@ -2,7 +2,7 @@
 
 /**
  * _myenv - prints the current environment
- * @infi: structure containing potential arguments. used to maintain
+ * @info: structure containing potential arguments. used to maintain
  *        constant function prototype
  * Return: Always 0
  */
@@ -38,7 +38,7 @@ char *_getenv(info_t *info, const char *name)
 /**
  * _mysetenv - initialize a new environment variable,
  *             or modify an existing one
- * @infi: structure containing potential arguments. used to maintain
+ * @info: structure containing potential arguments. used to maintain
  *        constant function prototype
  * Return: Always 0
  */

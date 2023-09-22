@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * clear_into - initilizes info_t struct
+ * clear_info - initilizes info_t struct
  * @info: struct address
  */
 void clear_info(info_t *info)
