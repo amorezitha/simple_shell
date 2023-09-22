@@ -62,7 +62,7 @@ void _puts(char *str)
 		_putchar(str[i]);
 		i++;
 	}
-}
+}	
 
 /**
  * _putchar - writes the character c ti stdout
@@ -74,15 +74,14 @@ void _puts(char *str)
 int _putchar(char c)
 {
 	static int i;
-	static char buf[WRITE_BUF_SIZE]
+	static char buf[WRITE_BUF_SIZE];
 
-		;if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
-		{
-			write(1, buf, i);
-			i = 0;
-		}
+	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+	{
+		write(1, buf, i);
+		i = 0;
+	}
 	if (c != BUF_FLUSH)
 		buf[i++] = c;
 	return (1);
 }
-
